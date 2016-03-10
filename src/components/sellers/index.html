@@ -1,31 +1,34 @@
-
 <div ng-show="isLoading">
-    <lodagin-message></loading-message>
+  <lodagin-message>test</loading-message>
 </div>
 
-<div ng-hide="isLoading">
-  <button class="btn btn-primary" ng-click="onAddSeller()">
-      <i class="fa fa-plus"/>
-      <span translate="sellers.Add"/>
-  </button>
-</div>
+<div style="max-height: 400px; min-height:400px;" class="col-md-8" ng-hide="isLoading">
 
-
-<table>
-  <thead>
-      <tr>
+  <div class="col-md-6">
+    <table>
+      <thead>
+        <tr>
           <th>
-             <span translate="sellers.Name"/>
-          <th>
-              <span  translate="sellers.category"/>
+            <span translate="sellers.Name"/>
           </th>
-      </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="s in seller">
-        <td>{{s.name}}</td>
-        <td>{{s.category}}</td>
-    </tr>
-  </tbody>
-  <tr></tr>
-</table>
+            <th>
+              <span translate="sellers.Category"/>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="s in sellers track by $index">
+            <td>{{s.name}}</td>
+            <td>{{s.category}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-2">
+      <button class="btn btn-primary" ng-click="onAddSeller()">
+        <i class="fa fa-plus"/>
+        <span translate="sellers.Add"/>
+      </button>
+    </div>
+  </div>

@@ -22,5 +22,10 @@
     "angular-toastr": "~1.7.0",
     "angular-mocks": "~1.5.0",
     "lodash": "~4.5.1"
+  },
+  "devDependencies": {
+    "angular-sanitize": "^1.5.0",
+    "angular-translate-loader-static-files": "^2.10.0",
+    "angular-translate-loader-url": "^2.10.0"
   }
 }
