@@ -2,7 +2,7 @@
 "use strict";
 
 angular.module('project3App')
-.controller('TabsCtrl', ['$scope', function ($scope) {
+.controller('SellerDetailsController', ['$scope', function ($scope) {
     $scope.tabs = [{
             title: 'Allar vörur',
             url: 'one.tpl.html'

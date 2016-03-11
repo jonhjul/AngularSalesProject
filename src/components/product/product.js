@@ -1,11 +1,10 @@
 "use strict";
 
-
 angular.module("project3App").directive("productCard",
 function productCard(){
   return {
-    restrict: "E",
-    templateUrl: "src/blabla/index.html",
+    restrict: "C",
+    templateUrl: "src/product/index.html",
     scope: {
       product : "="
     },
@@ -15,6 +14,9 @@ function productCard(){
     }
   };
 });
+
+
+
 
 /*
 <prodct-card ng-repeat="p in products"

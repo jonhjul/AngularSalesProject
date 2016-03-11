@@ -18,12 +18,13 @@
         </thead>
         <tbody>
           <tr ng-repeat="s in sellers track by $index">
-            <td>{{s.name}}</td>
+            <td><a ng-click="gotoSellerDetails(s)">{{s.name}}</td>
             <td>{{s.category}}</td>
           </tr>
         </tbody>
       </table>
     </div>
+
 
     <div class="col-md-2">
       <button class="btn btn-primary" ng-click="onAddSeller()">
