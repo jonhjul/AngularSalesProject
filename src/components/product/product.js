@@ -1,4 +1,4 @@
-use strict;
+"use strict";
 
 
 angular.module("project3App").directive("productCard",
@@ -13,7 +13,7 @@ function productCard(){
       var condition = attributes["validate-condition"];
       console.log(scope.product);
     }
-  }
+  };
 });
 
 /*

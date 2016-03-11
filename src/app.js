@@ -6,7 +6,12 @@ angular.module("project3App", ["ngRoute", "pascalprecht.translate", "ui.bootstra
     $routeProvider.when("/", {
       controller: "SellersController",
       templateUrl: "components/sellers/index.html"
-    });
+    }).when("/a", {
+      controller: "TabsCtrl",
+      templateUrl: "components/tabsView/tabs.html"
+    }).otherwise({
+        redirectTo: '/'
+      });
 
     $translateProvider.registerAvailableLanguageKeys(['en', 'is'], {
       'en-US': 'en',

@@ -2,6 +2,7 @@
 
 angular.module("project3App").controller("SellersController",
 function SellersController($scope, AppResource) {
+
 	// TODO: load data from AppResource! Also, add other methods, such as to
 	// add/update sellers etc.
 	$scope.isLoading = true;
@@ -23,7 +24,6 @@ var peterSeller = {
 
 //SellerDlg.show().then(function(seller){
 	AppResource.addSeller(peterSeller).success(function(seller){
-			console.log(seller);
 	}).error(function(){
 	//		centrisNotify.error("sellers.Messages.SaveFailed");
 		// TODO: hvað gerum við?
