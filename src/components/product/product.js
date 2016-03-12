@@ -21,7 +21,6 @@ function productCard(){
 /*
 <prodct-card ng-repeat="p in products"
   ng-model="p">
-
 </product-card>
 */
 

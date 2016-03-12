@@ -24,19 +24,8 @@ $scope.gotoSellerDetails = function(seller){
 };
 
 $scope.onAddSeller = function onAddSeller(){
-var peterSeller = {
-	name: "Peter Sellers",
-	category: "Movies",
-	imagePath: "http://www.meredy.com/sellerspeter03.jpg"
+
 };
 
-//SellerDlg.show().then(function(seller){
-	AppResource.addSeller(peterSeller).success(function(seller){
-	}).error(function(){
-	//		centrisNotify.error("sellers.Messages.SaveFailed");
-		// TODO: hvað gerum við?
-	});
-//});
-};
 
 });
