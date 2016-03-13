@@ -68,6 +68,7 @@ function AppResource() {
 		createProduct(3, 21, "Kókoskúlur",        499, 100, 5000, "https://upload.wikimedia.org/wikipedia/commons/2/2c/Chokladbollar.jpg"),
 		createProduct(3, 22, "Brjóstsykur",       499, 200, 4900, ""),
 	];
+	var nextProductID = 23;
 	// Note: sellers 2 and 4 don't have any products - yet!
 
 	// A helper object which emulates the return value
@@ -163,6 +164,7 @@ function AppResource() {
 				var seller = _.find(mockSellers, function(o){ return o.id === id;});
 				if (seller) {
 					success = true;
+					product.id = nextProductID++;
 					mockProducts.push({
 						id: seller.id,
 						product: product

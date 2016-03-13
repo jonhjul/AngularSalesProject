@@ -4,12 +4,13 @@ angular.module("project3App").directive("productCard",
 function productCard(){
   return {
     restrict: "C",
-    templateUrl: "src/product/index.html",
+    templateUrl: "/components/product/addItemModal.html",
     scope: {
       product : "="
     },
     link: function(scope,element,attributes){
       var condition = attributes["validate-condition"];
+      console.log("Directive productCard");
       console.log(scope.product);
     }
   };
@@ -33,23 +34,4 @@ function productCard(){
   <h4>{{product.name}}</h4>
   <span>{{product.price}}</span>
 </div>
-*/
-
-/*
-//Rest þjónusta
-Get
-/api/sellers
-
-Get
-/api/sellers/{id}
-
-Get
-/api/sellers/{id}/producst
-
-Post
-/api/sellers/{id}/producst
-
-Put
-/api/sellers/{id}/producst/{productid}
-
 */

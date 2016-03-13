@@ -5,13 +5,10 @@ angular.module("project3App", ["ngRoute", "pascalprecht.translate", "ui.bootstra
 
     $routeProvider.when("/", {
       controller: "SellersController",
-      templateUrl: "components/sellers/index.html"
+      templateUrl: "components/sellers/sellers.html"
     }).when("/sellerDetails/:sellerId", {
       controller: "SellerDetailsController",
       templateUrl: "components/seller-details/sellerDetails.html"
-    }).when("/b", {
-      controller: "productCtrl",
-      templateUrl: "components/product/index.html"
     }).otherwise({
         redirectTo: '/'
       });
@@ -21,25 +18,11 @@ angular.module("project3App", ["ngRoute", "pascalprecht.translate", "ui.bootstra
       'is-IS': 'is',
     });
 
-
-    $translateProvider.useSanitizeValueStrategy('escape');
-    $translateProvider.translations('is', {
-      "sellers": {
-        "Title": "Seljendur",
-        "Name": "Nafn",
-        "Category": "Flokkur",
-        "Add":    "Setja inn seljanda",
-        "Messages": {
-          "LoadFailed": "Ekki tókst að sækja lista yfir seljendur",
-          "SaveSucceeded": "Nýjum seljanda hefur verið bætt við",
-          "SaveFailed": "Því miður tókst ekki að bæta við nýjum seljanda"
-        }
-      }
-    });
     $translateProvider.preferredLanguage('is');
-    /*$translateProvider.useStaticFilesLoader({
+    $translateProvider.useSanitizeValueStrategy('escape');
+    $translateProvider.useStaticFilesLoader({
         prefix: 'lang_',
         suffix: '.json'
     });
-    */
+
   });

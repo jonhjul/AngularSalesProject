@@ -8,16 +8,24 @@
   <div class="modal-body">
 
     <div class="form-group">
-      <label for="text">Item name</label>
-      <input type="text" class="form-control" id="itemName" placeholder="Item name" ng-model="itemName"/>
+      <label for="text">Product name</label>
+      <input type="text" class="form-control" id="productName" placeholder="Item name" ng-model="productName"/>
     </div>
     <div class="form-group">
       <label for="price">Price</label>
-      <input type="text" class="form-control" id="price" placeholder="Price" ng-model="price"/>
+      <input type="number" class="form-control" id="price" placeholder="Price" ng-model="price"/>
+    </div>
+    <div class="form-group">
+      <label for="price">Quantity Sold</label>
+      <input type="number" class="form-control" id="quantitySold" placeholder="Quantity Sold" ng-model="quantitySold"/>
+    </div>
+    <div class="form-group">
+      <label for="price">Quantity In Stock</label>
+      <input type="number" class="form-control" id="quantityInStock" placeholder="Quantity In Stock" ng-model="quantityInStock"/>
     </div>
     <div class="form-group">
       <label for="imgUrl">Image url</label>
-      <input type="text" class="form-control" id="imgUrl" placeholder="Image url" ng-model="imgUrl"/>
+      <input type="url" class="form-control" id="imgUrl" placeholder="Image url" ng-model="imgUrl"/>
     </div>
     <button ng-click="onAddItem()" class="btn btn-default">Submit</button>
 

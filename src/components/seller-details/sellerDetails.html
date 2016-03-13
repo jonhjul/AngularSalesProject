@@ -6,12 +6,16 @@
     </button>
   </div>
 
+  <div class="col-md-2">
+    <button class="btn btn-warning" ng-click="goBack()">
+      back
+    </button>
+  </div>
   <!-- Modal -->
-
 
   <div id="tabs">
     <ul>
-      <li ng-repeat="tab in tabs" ng-class="{active:isActiveTab(tab.url)}" ng-click="onClickTab(tab)">{{tab.title}}</li>
+      <li ng-repeat="tab in tabs" ng-class="{active:isActiveTab(tab.url)}" ng-click="onClickTab(tab)">{{ tab.title | translate}}</li>
     </ul>
     <div id="mainView">
       <div ng-include="currentTab"></div>
@@ -19,20 +23,34 @@
   </div>
 
   <script type="text/ng-template" id="one.tpl.html">
-    <div id="viewOne">
-      <h1 >Allar vörur</h1>
+    <div id="viewOne" class="col-md-12">
+        <h2 translate="sellerdetails.Details"></h2>
+        <img ng-src="{{seller.imagePath}}" />
+        <div class="col-md-9">
+          <span>{{seller.name}}</span>
+        </div>
+        <div class="col-md-3">
+          <span>{{seller.category}}</span>
+        </div>
+    </div>
+  </script>
+
+  <script type="text/ng-template" id="two.tpl.html">
+    <div id="viewTwo">
+
       <prodct-card ng-repeat="p in products" ng-model="p">
         <div class="Product">
           <h4>{{p.name}}</h4>
           <span>{{p.price}}</span>
         </div>
       </product-card>
-    </script>
+    </div>
+  </script>
 
-    <script type="text/ng-template" id="two.tpl.html">
-      <div id="viewTwo">
-        <h1>Top ten</h1>
-      </div>
-    </script>
-  </div>
-  <!--    <img ng-src="{{p.imagePath}}" />-->
+  <script type="text/ng-template" id="three.tpl.html">
+    <div id="viewThree">
+      <h1>Top ten</h1>
+    </div>
+  </script>
+</div>
+<!--    <img ng-src="{{p.imagePath}}" />-->
