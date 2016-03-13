@@ -14,6 +14,18 @@ angular.module("project3App").directive("productCard",
     };
   });
 */
+angular.module('project3App')
+.directive('productCard', function(){
+	return {
+		restrict: 'E',
+		scope: { product: '=', edit:'=' },
+		templateUrl: 'components/product-card/productCard.html'
+	};
+});
+
+
+
+/*
 angular.module("project3App").component('productCard',{
     bindings: {
       product: "="
@@ -21,7 +33,7 @@ angular.module("project3App").component('productCard',{
     controller: function(){
     },
     isolate: false,
-    template: function($element,$attrs){
+    template: function($element, $attrs){
       console.log($element);
       return[
         '<div class="Product">',
@@ -32,7 +44,7 @@ angular.module("project3App").component('productCard',{
       ].join('');
     }
 });
-
+*/
 
 /*
 <prodct-card ng-repeat="p in products"

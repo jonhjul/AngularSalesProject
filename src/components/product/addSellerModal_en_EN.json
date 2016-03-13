@@ -1,0 +1,10 @@
+{
+	"addItemModal" : {
+    "addItem":                     "Add item",
+		"productName":                 "Product name",
+    "price":                       "Price",
+    "imgUrl":                      "Image url",
+    "submit":                     "Send",
+    "close":                      "Close"
+	}
+}

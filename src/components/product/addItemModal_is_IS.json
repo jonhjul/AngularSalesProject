@@ -1,0 +1,10 @@
+{
+	"addItemModal" : {
+    "addItem":                     "Bæta við vöru",
+		"productName":                 "Nafn vöru",
+    "price":                       "Verð",
+    "imgUrl":                      "Vefslóð á mynd",
+    "submit":                     "Senda",
+    "close":                      "Loka"
+	}
+}

@@ -38,9 +38,11 @@
   <script type="text/ng-template" id="two.tpl.html">
     <div id="viewTwo">
 
-      <product-card ng-repeat="product in products" ng-model="product">
-
+    <div ng-repeat="p in products" ng-style="{display:'inline-block',border:'none', width:100/widgets.length+'%'}">
+      <product-card product="p">
       </product-card>
+    </div>
+
     </div>
   </script>
 

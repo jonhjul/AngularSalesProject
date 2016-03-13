@@ -2,35 +2,27 @@
 
   <div class="modal-header">
     <button type="button" class="close" ng-click="closeModal()">&times;</button>
-    <h4 class="modal-title">Add Item</h4>
+    <h4 class="modal-title" translate="addItemModal.addItem"></h4>
   </div>
 
   <div class="modal-body">
 
     <div class="form-group">
-      <label for="text">Product name</label>
-      <input type="text" class="form-control" id="productName" placeholder="Item name" ng-model="productName"/>
+      <label for="text" translate="addItemModal.productName"></label>
+      <input type="text" class="form-control" id="productName" placeholder="{{'addItemModal.productName' | translate}}" ng-model="productName"/>
     </div>
     <div class="form-group">
-      <label for="price">Price</label>
-      <input type="number" class="form-control" id="price" placeholder="Price" ng-model="price"/>
+      <label for="price" translate="addItemModal.price"></label>
+      <input type="number" class="form-control" id="price" placeholder="{{'addItemModal.price' | translate}}" ng-model="price"/>
     </div>
     <div class="form-group">
-      <label for="price">Quantity Sold</label>
-      <input type="number" class="form-control" id="quantitySold" placeholder="Quantity Sold" ng-model="quantitySold"/>
+      <label for="imgUrl" translate="addItemModal.imgUrl"></label>
+      <input type="url" class="form-control" id="imgUrl" placeholder="{{'addItemModal.imgUrl' | translate}}" ng-model="imgUrl"/>
     </div>
-    <div class="form-group">
-      <label for="price">Quantity In Stock</label>
-      <input type="number" class="form-control" id="quantityInStock" placeholder="Quantity In Stock" ng-model="quantityInStock"/>
-    </div>
-    <div class="form-group">
-      <label for="imgUrl">Image url</label>
-      <input type="url" class="form-control" id="imgUrl" placeholder="Image url" ng-model="imgUrl"/>
-    </div>
-    <button ng-click="onAddItem()" class="btn btn-default">Submit</button>
+    <button ng-click="onAddItem()" class="btn btn-default" translate="addItemModal.submit"></button>
 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-default" ng-click="closeModal()">Close</button>
+    <button type="button" class="btn btn-default" ng-click="closeModal()" translate="addItemModal.close"></button>
   </div>
 </div>
