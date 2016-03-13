@@ -3,9 +3,13 @@
 </div>
 
 
-
-
 <div class="col-md-12" ng-hide="isLoading" >
+  <div class="col-md-12">
+    <button class="btn btn-primary" ng-click="onAddSeller()">
+      <span translate="sellers.Add"/>
+    </button>
+  </div>
+
   <div>
     <table class="col-md-10" id="mainView">
       <thead>
@@ -26,9 +30,4 @@
         </tbody>
       </table>
     </div>
-      <div class="col-md-2">
-        <button class="btn btn-primary" ng-click="onAddSeller()">
-          <span translate="sellers.Add"/>
-        </button>
-      </div>
   </div>

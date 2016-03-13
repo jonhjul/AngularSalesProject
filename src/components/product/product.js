@@ -1,19 +1,5 @@
 "use strict";
-/*
-angular.module("project3App").directive("productCard",
-  function productCard() {
-    return {
-      restrict: "E",
-      templateUrl: "components/product-card/index.html",
-      scope: {
-        product: "="
-      },
-      link: function(scope, element, attributes) {
-        console.log("Directive productCard");
-      }
-    };
-  });
-*/
+
 angular.module('project3App')
 .directive('productCard', function(){
 	return {

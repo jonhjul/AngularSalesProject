@@ -1,27 +1,28 @@
-/*
 "use strict";
 
-angular.module("project3App").contoller("SellerDlgController",
-function SellerDlgController($scope){
+angular.module("project3App").controller("SellerDlgController",
+function SellerDlgController($scope, AppResource) {
 
-    $scope.seller = {
-        name: "Herbert Guðmundsson",
-        category: "Bækur",
-        imagePath: ""
-    };
+  $scope.onOk = function onOK() {
+    if ($scope.seller.name.length === 0) {
+      return;
+    }
+    if ($scope.seller.category.length === 0) {
+      return;
+    }
 
-    $scope.onOk = function onOK(){
-        // TODO: validation!!
-        if($scope.seller.name.length === 0){
-          // Birta validation skilabod!
-          return;
-        }
-        $scope.$close($scope.seller);
-    };
 
-    $scope.onCancel = function onCancel(){
-        $scope.$dismiss();
-    };
+    AppResource.addSeller($scope.seller).success(function(seller) {
+        console.log("Add seller succsess");
+        console.log(seller);
+      };
+    $scope.$close($scope.seller);
+
+    });
+};
+
+$scope.onCancel = function onCancel() {
+  $scope.$dismiss();
+};
 
 });
-*/
