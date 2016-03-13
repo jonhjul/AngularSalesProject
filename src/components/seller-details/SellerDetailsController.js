@@ -28,13 +28,10 @@ angular.module('project3App')
     };
 
     $scope.goBack = function goBack(){
-      console.log("go back");
       $location.path('/');
     };
 
     AppResource.getSellerDetails(parseInt($routeParams['sellerId'])).success(function(seller){
-        console.log("Get seller details");
-        console.log(seller);
         $scope.seller = seller;
     }).error(function(){
 

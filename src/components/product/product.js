@@ -1,22 +1,37 @@
 "use strict";
-
+/*
 angular.module("project3App").directive("productCard",
-function productCard(){
-  return {
-    restrict: "C",
-    templateUrl: "/components/product/addItemModal.html",
-    scope: {
-      product : "="
+  function productCard() {
+    return {
+      restrict: "E",
+      templateUrl: "components/product-card/index.html",
+      scope: {
+        product: "="
+      },
+      link: function(scope, element, attributes) {
+        console.log("Directive productCard");
+      }
+    };
+  });
+*/
+angular.module("project3App").component('productCard',{
+    bindings: {
+      product: "="
     },
-    link: function(scope,element,attributes){
-      var condition = attributes["validate-condition"];
-      console.log("Directive productCard");
-      console.log(scope.product);
+    controller: function(){
+    },
+    isolate: false,
+    template: function($element,$attrs){
+      console.log($element);
+      return[
+        '<div class="Product">',
+          '<img ng-src="{{product.imageUrl}}" />',
+          '<span>{{product.name}}</span>',
+          '<span>{{product.price}}</span>',
+        '</div>'
+      ].join('');
     }
-  };
 });
-
-
 
 
 /*

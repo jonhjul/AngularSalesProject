@@ -24,33 +24,40 @@
 
   <script type="text/ng-template" id="one.tpl.html">
     <div id="viewOne" class="col-md-12">
-        <h2 translate="sellerdetails.Details"></h2>
-        <img ng-src="{{seller.imagePath}}" />
-        <div class="col-md-9">
-          <span>{{seller.name}}</span>
-        </div>
-        <div class="col-md-3">
-          <span>{{seller.category}}</span>
-        </div>
+      <h2 translate="sellerdetails.Details"></h2>
+      <img ng-src="{{seller.imagePath}}"/>
+      <div class="col-md-9">
+        <span>{{seller.name}}</span>
+      </div>
+      <div class="col-md-3">
+        <span>{{seller.category}}</span>
+      </div>
     </div>
   </script>
 
   <script type="text/ng-template" id="two.tpl.html">
     <div id="viewTwo">
 
-      <prodct-card ng-repeat="p in products" ng-model="p">
-        <div class="Product">
-          <h4>{{p.name}}</h4>
-          <span>{{p.price}}</span>
-        </div>
+      <product-card ng-repeat="product in products" ng-model="product">
+
       </product-card>
     </div>
   </script>
 
   <script type="text/ng-template" id="three.tpl.html">
     <div id="viewThree">
-      <h1>Top ten</h1>
+
+      <div ng-repeat="p in products | orderBy: 'quantitySold'| limitTo:10" ng-model="p">
+        <div class="Product">
+          <p>{{p.name}}</p>
+          <p>{{p.price}}</p>
+        </div>
+      </div>
+      <div ng-if="products.length == 0">
+        <strong>No results found...</strong>
+      </div>
+
     </div>
   </script>
 </div>
-<!--    <img ng-src="{{p.imagePath}}" />-->
+<!--   -->
