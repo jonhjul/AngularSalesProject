@@ -15,10 +15,10 @@ function SellerDlgController($scope, AppResource) {
     AppResource.addSeller($scope.seller).success(function(seller) {
         console.log("Add seller succsess");
         console.log(seller);
-      };
+    });
     $scope.$close($scope.seller);
 
-    });
+
 };
 
 $scope.onCancel = function onCancel() {
