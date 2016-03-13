@@ -2,30 +2,36 @@
   <lodagin-message>Loading msgs</loading-message>
 </div>
 
-
-<div class="col-md-12" ng-hide="isLoading" >
-  <div class="col-md-12">
+<div class="col-md-12" ng-hide="isLoading">
+  <div class="col-md-2">
     <button class="btn btn-primary" ng-click="onAddSeller()">
       <span translate="sellers.Add"/>
     </button>
   </div>
+  <div class="col-md-2">
+    <button class="btn btn-warning" ng-click="changeLang()" ng-controller="langController">
+      <span translate="language"/>
+    </button>
+  </div>
+<div>
 
+<div class="col-md-12" ng-hide="isLoading" >
   <div>
-    <table class="col-md-10" id="mainView">
+    <table class="col-md-12" id="mainView">
       <thead>
         <tr>
-          <th class="col-md-5">
+          <th class="col-md-6">
             <span translate="sellers.Name"/>
           </th>
-            <th class="col-md-5">
+            <th class="col-md-6">
               <span translate="sellers.Category"/>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="s in sellers track by $index" >
-            <td class="col-md-5"><a ng-click="gotoSellerDetails(s)">{{s.name}}</td>
-            <td class="col-md-5">{{s.category}}</td>
+            <td class="col-md-6"><a ng-click="gotoSellerDetails(s)">{{s.name}}</td>
+            <td class="col-md-6">{{s.category}}</td>
           </tr>
         </tbody>
       </table>

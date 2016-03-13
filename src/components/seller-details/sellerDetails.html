@@ -1,16 +1,24 @@
 <div>
 
-  <div class="col-md-2">
-    <button class="btn btn-primary" ng-click="onAddItem()">
-      Add item
-    </button>
+  <div class="col-md-12" ng-hide="isLoading">
+    <div class="col-md-2">
+      <button class="btn btn-primary" ng-click="onAddItem()">
+        Add item
+      </button>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-warning" ng-click="changeLang()" ng-controller="langController">
+        <span translate="language"/>
+      </button>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-warning" ng-click="goBack()">
+        back
+      </button>
+    </div>
   </div>
 
-  <div class="col-md-2">
-    <button class="btn btn-warning" ng-click="goBack()">
-      back
-    </button>
-  </div>
+
   <!-- Modal -->
 
   <div id="tabs">
@@ -38,10 +46,9 @@
   <script type="text/ng-template" id="two.tpl.html">
     <div id="viewTwo">
 
-    <div ng-repeat="p in products" ng-style="{display:'inline-block',border:'none', width:100/widgets.length+'%'}">
-      <product-card product="p">
-      </product-card>
-    </div>
+      <div ng-repeat="p in products" ng-style="{display:'inline-block',border:'none', width:100/widgets.length+'%'}">
+        <product-card product="p" edit="p"></product-card>
+      </div>
 
     </div>
   </script>
