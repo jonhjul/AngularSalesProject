@@ -6,7 +6,6 @@ function langController($scope, $translate ) {
     //  $translatePartialLoader.addPart('translation');
 
       var currLang = $translate.use();
-      console.log(currLang);
       if(currLang === 'is'){
         $translate.use('en');
       }else if(currLang === 'en'){

@@ -1,10 +1,33 @@
 "use strict";
 
 angular.module('project3App')
-  .controller('SellerDetailsController', ['$scope', 'AppResource','$routeParams', '$uibModal', '$location',
-  function($scope, AppResource, $routeParams, $uibModal, $location) {
+  .controller('SellerDetailsController', ['$scope', 'AppResource','$routeParams', '$uibModal', '$location', 'toastr', '$translate',
+  function($scope, AppResource, $routeParams, $uibModal, $location, toastr, $translate) {
     $scope.modalInstance = {};
     $scope.seller = {};
+
+    $translate('sellerdetails.Details').then(function (translateVal) {
+      toastr.info(translateVal, {
+          allowHtml: true
+        });
+    });
+
+    $scope.sortBy = 'price';
+    $scope.selectItems = [
+      {"name":"Name","value":"name"},
+      {"name":"Price","value":"price"},
+      {"name":"quantitySold","value":"quantitySold"},
+      {"name":"quantityInStock","value":"quantityInStock"}
+    ];
+
+    $scope.update = function update() {
+        $scope.products = $scope.products.sort();
+    };
+
+    $scope.orderParam = function (){
+      console.log('ran');
+        return $scope.sortBy;
+    };
 
     $scope.tabs = [{
       title: 'tabs.sellerInfo',

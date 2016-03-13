@@ -1,20 +1,24 @@
 <div>
 
   <div class="col-md-12" ng-hide="isLoading">
-    <div class="col-md-2">
+    <div class="col-md-1">
       <button class="btn btn-primary" ng-click="onAddItem()">
         Add item
       </button>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-1">
       <button class="btn btn-warning" ng-click="changeLang()" ng-controller="langController">
         <span translate="language"/>
       </button>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-1">
       <button class="btn btn-warning" ng-click="goBack()">
         back
       </button>
+    </div>
+    <div class="col-md-2">
+      <select class="form-control" ng-model="sortBy" ng-change="update()" ng-options="item.value as item.name for item in selectItems">
+      </select>
     </div>
   </div>
 
@@ -46,8 +50,11 @@
   <script type="text/ng-template" id="two.tpl.html">
     <div id="viewTwo">
 
-      <div ng-repeat="p in products" ng-style="{display:'inline-block',border:'none', width:100/widgets.length+'%'}">
+      <div ng-repeat="p in products | orderBy: (sortBy)" ng-style="{display:'inline-block',border:'none', width:100/widgets.length+'%'}">
         <product-card product="p" edit="p"></product-card>
+      </div>
+      <div ng-if="products.length == 0">
+        <strong>No results found...</strong>
       </div>
 
     </div>
@@ -56,15 +63,15 @@
   <script type="text/ng-template" id="three.tpl.html">
     <div id="viewThree">
 
-      <div ng-repeat="p in products | orderBy: 'quantitySold'| limitTo:10" ng-model="p">
-        <div class="Product">
-          <p>{{p.name}}</p>
-          <p>{{p.price}}</p>
-        </div>
-      </div>
-      <div ng-if="products.length == 0">
-        <strong>No results found...</strong>
-      </div>
+    <div ng-repeat="p in products | orderBy: 'quantitySold'| limitTo:10" ng-style="{display:'inline-block',border:'none', width:100/widgets.length+'%'}">
+      <h3>{{$index+1}}</h3>
+      <product-card product="p" edit="p"></product-card>
+    </div>
+    <div ng-if="products.length == 0">
+      <strong>No results found...</strong>
+    </div>
+
+
 
     </div>
   </script>

@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("project3App").controller("SellerDlgController",
+angular.module("project3App").controller("SellerDlgController",['$scope', 'AppResource',
   function SellerDlgController($scope, AppResource) {
 
     $scope.onOk = function onOK() {
@@ -23,4 +23,4 @@ angular.module("project3App").controller("SellerDlgController",
       $scope.$dismiss();
     };
 
-  });
+  }]);

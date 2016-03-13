@@ -18,7 +18,7 @@ angular.module("project3App", ["ngRoute", "pascalprecht.translate", "ui.bootstra
       'is-IS': 'is',
     });
 
-    $translateProvider.preferredLanguage('is');
+    $translateProvider.preferredLanguage('en');
     $translateProvider.useSanitizeValueStrategy('escape');
     $translateProvider.useStaticFilesLoader({
         prefix: 'lang_',
@@ -26,3 +26,18 @@ angular.module("project3App", ["ngRoute", "pascalprecht.translate", "ui.bootstra
     });
 
   });
+/*
+
+(10%) Add/edit individuals
+
+
+(10%) Add/edit product
+(5%) All tables sortable
+(5%) All input validated
+(5%) Translated
+(5%) Toastr feedback after add/edit
+(5%) Responsive layout
+
+(20%) Unit tests for all code
+(10%) Coolness bonus
+*/
