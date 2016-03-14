@@ -1,13 +1,16 @@
 {
-	"sellerdetails" : {
-		"Title":                     "Sellers List",
-		"Name":                      "Name",
-		"Category":										"Category",
-		"Details":										"Seller details",
+	"SellerDetails" : {
+		"Details":								"Seller details",
+		"AddItem":                     "Add item",
+		"ProductName":                 "Product name",
+		"Price":                       "Price",
+		"ImgUrl":                      "Image url",
+		"Submit":                     "Submit",
+		"Close":                      "Close",
 		"Messages" : {
-			"LoadFailed":            "Failed to load the list of sellers",
-			"SaveSucceeded":         "The seller has been added successfully",
-			"SaveFailed":            "Unfortunately we could not add a new seller"
+			"LoadFailed":           "Failed to load the list of products",
+			"SaveSucceeded":        "The product has been added successfully",
+			"SaveFailed":           "Unfortunately we could not add a new product"
 		}
 	}
 }

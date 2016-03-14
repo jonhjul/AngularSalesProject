@@ -2,22 +2,29 @@
 
   <div class="modal-header">
     <button type="button" class="close" ng-click="onCancel()">&times;</button>
-    <h4 class="modal-title">Add Seller</h4>
+    <h4 class="modal-title" translate="seller.Add" ng-show="seller.id === '' "></h4>
+    <h4 class="modal-title" translate="seller.Edit" ng-hide="seller.id === '' "></h4>
   </div>
 
   <div class="modal-body">
 
     <div class="form-group">
       <label for="name">Seller name</label>
-      <input type="text" class="form-control" id="sellerName" placeholder="Seller name" ng-model="seller.name"/>
+      <input type="text" class="form-control" id="sellerName"
+      placeholder="{{'SellerDetails.Name' | translate}}"
+            ng-model="seller.name"/>
     </div>
     <div class="form-group">
       <label for="category">Category</label>
-      <input type="text" class="form-control" id="category" placeholder="Category" ng-model="seller.category"/>
+      <input type="text" class="form-control" id="category"
+      placeholder="{{'SellerDetails.Category' | translate}}"
+            ng-model="seller.category"/>
     </div>
     <div class="form-group">
-      <label for="imgUrl">Category</label>
-      <input type="text" class="form-control" id="imgUrl" placeholder="Image url" ng-model="seller.imagePath"/>
+      <label for="imgUrl" translate="SellerDetails.imagePath"></label>
+      <input type="text" class="form-control" id="imgUrl"
+      placeholder="{{'SellerDetails.imagePath' | translate}}"
+            ng-model="seller.imagePath"/>
     </div>
     <button ng-click="onOk()" class="btn btn-default">Submit</button>
 

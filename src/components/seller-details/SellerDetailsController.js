@@ -1,8 +1,8 @@
 "use strict";
 
 angular.module('project3App')
-  .controller('SellerDetailsController', ['$scope', 'AppResource','$routeParams', '$uibModal', '$location', 'toastr', '$translate',
-  function($scope, AppResource, $routeParams, $uibModal, $location, toastr, $translate) {
+  .controller('SellerDetailsController', ['$scope', 'AppResource','$routeParams', '$uibModal', '$location', 'toastr', '$translate','ProductDlg',
+  function($scope, AppResource, $routeParams, $uibModal, $location, toastr, $translate, ProductDlg) {
     $scope.modalInstance = {};
     $scope.seller = {};
 
@@ -16,8 +16,8 @@ angular.module('project3App')
     $scope.selectItems = [
       {"name":"Name","value":"name"},
       {"name":"Price","value":"price"},
-      {"name":"quantitySold","value":"quantitySold"},
-      {"name":"quantityInStock","value":"quantityInStock"}
+      {"name":"Quantity Sold","value":"quantitySold"},
+      {"name":"Quantity In Stock","value":"quantityInStock"}
     ];
 
     $scope.update = function update() {
@@ -30,13 +30,13 @@ angular.module('project3App')
     };
 
     $scope.tabs = [{
-      title: 'tabs.sellerInfo',
+      title: 'Tabs.SellerInfo',
       url: 'one.tpl.html'
     },{
-      title: 'tabs.allProducts',
+      title: 'Tabs.AllProducts',
       url: 'two.tpl.html'
-    }, {
-      title: 'tabs.topTen',
+    },{
+      title: 'Tabs.TopTen',
       url: 'three.tpl.html'
     }];
 
@@ -61,6 +61,16 @@ angular.module('project3App')
     });
 
 
+    $scope.editProduct = function editProduct(product) {
+      console.log(product);
+      ProductDlg.open(product);
+    };
+
+    $scope.onAddItem = function onAddItem() {
+        ProductDlg.open();
+    };
+
+/*
     $scope.onAddItem = function onAddItem() {
       $scope.modalInstance = $uibModal.open({
         animation: false,
@@ -80,7 +90,7 @@ angular.module('project3App')
         //$log.info('Modal dismissed at: ' + new Date());
       });
     };
-
+*/
     angular.element(document).ready(function() {
         $scope.refreshSellerProducts();
     });

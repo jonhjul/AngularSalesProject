@@ -1,7 +1,7 @@
 {
-	"tabs" : {
-		"sellerInfo":              "Upplýsingar um seljenda",
-		"allProducts":							"Allar vörur",
-		"topTen":										"Top tíu"				
+	"Tabs" : {
+		"SellerInfo":              "Upplýsingar um seljenda",
+		"AllProducts":							"Allar vörur",
+		"TopTen":										"Top tíu"				
 	}
 }

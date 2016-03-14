@@ -9,20 +9,28 @@
 
     <div class="form-group">
       <label for="text" translate="addItemModal.productName"></label>
-      <input type="text" class="form-control" id="productName" placeholder="{{'addItemModal.productName' | translate}}" ng-model="productName"/>
+      <input type="text" class="form-control" id="productName"
+            placeholder="{{'addItemModal.productName' | translate}}"
+            ng-model="productName"/>
     </div>
     <div class="form-group">
       <label for="price" translate="addItemModal.price"></label>
-      <input type="number" class="form-control" id="price" placeholder="{{'addItemModal.price' | translate}}" ng-model="price"/>
+      <input type="number" class="form-control" id="price"
+            placeholder="{{'addItemModal.price' | translate}}"
+            ng-model="price"/>
     </div>
     <div class="form-group">
       <label for="imgUrl" translate="addItemModal.imgUrl"></label>
-      <input type="url" class="form-control" id="imgUrl" placeholder="{{'addItemModal.imgUrl' | translate}}" ng-model="imgUrl"/>
+      <input type="url" class="form-control" id="imgUrl"
+            placeholder="{{'addItemModal.imgUrl' | translate}}"
+            ng-model="imgUrl"/>
     </div>
-    <button ng-click="onAddItem()" class="btn btn-default" translate="addItemModal.submit"></button>
+    <button ng-click="onAddItem()" class="btn btn-default"
+            translate="addItemModal.submit"></button>
 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-default" ng-click="closeModal()" translate="addItemModal.close"></button>
+    <button type="button" class="btn btn-default" ng-click="closeModal()"
+            translate="addItemModal.close"></button>
   </div>
 </div>

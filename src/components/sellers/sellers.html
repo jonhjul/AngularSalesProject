@@ -3,9 +3,9 @@
 </div>
 
 <div class="col-md-12" ng-hide="isLoading">
-  <div class="col-md-2">
+  <div class="col-md-4">
     <button class="btn btn-primary" ng-click="onAddSeller()">
-      <span translate="sellers.Add"/>
+      <span translate="Sellers.Add"/>
     </button>
   </div>
   <div class="col-md-2">
@@ -13,7 +13,7 @@
       <span translate="language"/>
     </button>
   </div>
-<div>
+</div>
 
 <div class="col-md-12" ng-hide="isLoading" >
   <div>
@@ -23,16 +23,16 @@
           <th class="col-md-4">
           </th>
           <th class="col-md-4">
-            <span translate="sellers.Name"/>
+            <span translate="Sellers.Name"/>
           </th>
             <th class="col-md-4">
-              <span translate="sellers.Category"/>
+              <span translate="Sellers.Category"/>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="s in sellers track by $index" class="Sellers">
-            <td class="col-md-4">  <img ng-src="{{s.imagePath}}" /></td>
+            <td class="col-md-4">  <img ng-src="{{s.imagePath}}" ng-click="gotoSellerDetails(s)"/></td>
             <td class="col-md-4 tableCrusor"><a ng-click="gotoSellerDetails(s)">{{s.name}} - <a ng-click="editSeller(s)">Edit</a></td>
             <td class="col-md-4">{{s.category}}</td>
           </tr>

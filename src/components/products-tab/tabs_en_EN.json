@@ -1,7 +1,7 @@
 {
-	"tabs" : {
-		"sellerInfo":              "Seller informations",
-		"allProducts":							"All producs",
-		"topTen":										"Top ten"
+	"Tabs" : {
+		"SellerInfo":              "Seller informations",
+		"AllProducts":							"All producs",
+		"TopTen":										"Top ten"
 	}
 }

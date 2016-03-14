@@ -4,7 +4,7 @@ angular.module('project3App')
 .directive('productCard', function(){
 	return {
 		restrict: 'E',
-		scope: { product: '=', edit:'=' },
+		scope: true, //, edit:'='
 		templateUrl: 'components/product-card/productCard.html'
 	};
 });

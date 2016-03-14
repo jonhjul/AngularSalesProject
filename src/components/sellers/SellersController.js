@@ -21,8 +21,7 @@ angular.element(document).ready(function() {
 });
 
 $scope.onAddSeller = function onAddSeller(){
-		$scope.modalInstance = SellerDlg.open();
-
+		SellerDlg.open();
 };
 
 $scope.editSeller = function editSeller(e) {

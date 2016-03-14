@@ -1,8 +1,9 @@
 
 <div class="col-md-3 productCard">
-  <img ng-src="{{product.imagePath}}" />
-  <h4>{{product.name}}</h4>
+  <img ng-src="{{product.imagePath}}"/>
+  <h4 >{{product.name}}</h4>
   <p>{{product.price}}</p>
+  <a ng-click="editProduct(product)">Edit</a>
 </div>
 
 

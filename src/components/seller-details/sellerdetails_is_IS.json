@@ -1,13 +1,16 @@
 {
-	"sellerdetails" : {
-		"Title":                     "Seljendur",
-		"Name":                      "Nafn",
-		"Category":										"Flokkur",
-		"Details":										"Upplýsingar um seljanda",
+	"SellerDetails" : {
+		"Details":								"Upplýsingar um seljanda",
+		"AddItem":                     "Bæta við vöru",
+		"ProductName":                 "Nafn vöru",
+		"Price":                       "Verð",
+		"ImgUrl":                      "Vefslóð á mynd",
+		"Submit":                     "Senda",
+		"Close":                      "Loka",
 		"Messages" : {
-			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
-			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
-			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"
+			"LoadFailed":           "Ekki tókst að sækja lista yfir vörur",
+			"SaveSucceeded":        "Nýrri vöru hefur verið bætt við",
+			"SaveFailed":           "Því miður tókst ekki að bæta við nýrri vöru"
 		}
 	}
 }

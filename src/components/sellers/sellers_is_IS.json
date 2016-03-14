@@ -1,9 +1,13 @@
 {
-	"sellers" : {
-		"Title":                     "Seljendur",
-		"Name":                      "Nafn",
-		"Category":										"Flokkur",
-		"Add":												"Bæta við seljenda",
+	"Sellers" : {
+		"Title":                    "Seljendur",
+		"Name":                     "Nafn",
+		"Category":									"Flokkur",
+		"Add":											"Bæta við seljenda",
+		"Edit":											"Edit seller",
+    "ImgUrl":                   "Slóð á mynd",
+    "Submit":                   "Senda",
+    "Close":                    "Loka",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
