@@ -20,18 +20,21 @@
     <table class="col-md-12" id="mainView">
       <thead>
         <tr>
-          <th class="col-md-6">
+          <th class="col-md-4">
+          </th>
+          <th class="col-md-4">
             <span translate="sellers.Name"/>
           </th>
-            <th class="col-md-6">
+            <th class="col-md-4">
               <span translate="sellers.Category"/>
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="s in sellers track by $index" >
-            <td class="col-md-6"><a ng-click="gotoSellerDetails(s)">{{s.name}}</td>
-            <td class="col-md-6">{{s.category}}</td>
+          <tr ng-repeat="s in sellers track by $index" class="Sellers">
+            <td class="col-md-4">  <img ng-src="{{s.imagePath}}" /></td>
+            <td class="col-md-4 tableCrusor"><a ng-click="gotoSellerDetails(s)">{{s.name}} - <a ng-click="editSeller(s)">Edit</a></td>
+            <td class="col-md-4">{{s.category}}</td>
           </tr>
         </tbody>
       </table>

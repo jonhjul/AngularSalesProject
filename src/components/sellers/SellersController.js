@@ -25,6 +25,9 @@ $scope.onAddSeller = function onAddSeller(){
 
 };
 
+$scope.editSeller = function editSeller(e) {
+	SellerDlg.open(e);
+};
 
 $scope.gotoSellerDetails = function(seller){
 	for (var s in $scope.sellers) {
