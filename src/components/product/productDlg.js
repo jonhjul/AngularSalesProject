@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module("project3App").factory("ProductDlg",
-  function SellerDlg($uibModal) {
+  function ProductDlg($uibModal) {
     return {
       open: function open(product) {
         var modalInstance = $uibModal.open({
-          templateUrl: "components/product/addItemModal.html",
+          templateUrl: "components/product/product-dlg.html",
           controller: "productController", // validation logic
           resolve: {
             modalParam: function modalParam() {

@@ -5,7 +5,7 @@
 		"Category":									"Category",
 		"Add":											"Add seller",
 		"Edit":											"Edit seller",
-    "ImgUrl":                   "Image url",
+    "ImagePath":                   "Image url",
     "Submit":                   "Send",
     "Close":                    "Close",
 		"Messages" : {

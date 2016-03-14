@@ -1,36 +1,36 @@
 <div class="modal-content">
 
   <div class="modal-header">
-    <button type="button" class="close" ng-click="closeModal()">&times;</button>
+    <button type="button" class="close" ng-click="onCancel()">&times;</button>
     <h4 class="modal-title" translate="addItemModal.addItem"></h4>
   </div>
 
   <div class="modal-body">
 
     <div class="form-group">
-      <label for="text" translate="addItemModal.productName"></label>
+      <label for="name" translate="addItemModal.productName"></label>
       <input type="text" class="form-control" id="productName"
             placeholder="{{'addItemModal.productName' | translate}}"
-            ng-model="productName"/>
+            ng-model="product.name"/>
     </div>
     <div class="form-group">
       <label for="price" translate="addItemModal.price"></label>
       <input type="number" class="form-control" id="price"
             placeholder="{{'addItemModal.price' | translate}}"
-            ng-model="price"/>
+            ng-model="product.price"/>
     </div>
     <div class="form-group">
       <label for="imgUrl" translate="addItemModal.imgUrl"></label>
       <input type="url" class="form-control" id="imgUrl"
             placeholder="{{'addItemModal.imgUrl' | translate}}"
-            ng-model="imgUrl"/>
+            ng-model="product.imagePath"/>
     </div>
-    <button ng-click="onAddItem()" class="btn btn-default"
+    <button ng-click="onOk()" class="btn btn-default"
             translate="addItemModal.submit"></button>
 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-default" ng-click="closeModal()"
+    <button type="button" class="btn btn-default" ng-click="onCancel()"
             translate="addItemModal.close"></button>
   </div>
 </div>

@@ -5,7 +5,7 @@
 		"Category":									"Flokkur",
 		"Add":											"Bæta við seljenda",
 		"Edit":											"Edit seller",
-    "ImgUrl":                   "Slóð á mynd",
+    "ImagePath":                "Slóð á mynd",
     "Submit":                   "Senda",
     "Close":                    "Loka",
 		"Messages" : {

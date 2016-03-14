@@ -2,28 +2,28 @@
 
   <div class="modal-header">
     <button type="button" class="close" ng-click="onCancel()">&times;</button>
-    <h4 class="modal-title" translate="seller.Add" ng-show="seller.id === '' "></h4>
-    <h4 class="modal-title" translate="seller.Edit" ng-hide="seller.id === '' "></h4>
+    <h4 class="modal-title" translate="Sellers.Add" ng-show="seller == undefined "></h4>
+    <h4 class="modal-title" translate="Sellers.Edit" ng-hide="seller == undefined "></h4>
   </div>
 
   <div class="modal-body">
 
     <div class="form-group">
-      <label for="name">Seller name</label>
+      <label for="name" translate="Sellers.Name" ></label>
       <input type="text" class="form-control" id="sellerName"
-      placeholder="{{'SellerDetails.Name' | translate}}"
+      placeholder="{{'Sellers.Name' | translate}}"
             ng-model="seller.name"/>
     </div>
     <div class="form-group">
-      <label for="category">Category</label>
+      <label for="category" translate="Sellers.Category"></label>
       <input type="text" class="form-control" id="category"
-      placeholder="{{'SellerDetails.Category' | translate}}"
+      placeholder="{{'Sellers.Category' | translate}}"
             ng-model="seller.category"/>
     </div>
     <div class="form-group">
-      <label for="imgUrl" translate="SellerDetails.imagePath"></label>
+      <label for="imgUrl" translate="Sellers.ImagePath"></label>
       <input type="text" class="form-control" id="imgUrl"
-      placeholder="{{'SellerDetails.imagePath' | translate}}"
+      placeholder="{{'SellerDetails.ImagePath' | translate}}"
             ng-model="seller.imagePath"/>
     </div>
     <button ng-click="onOk()" class="btn btn-default">Submit</button>

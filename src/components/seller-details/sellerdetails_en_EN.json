@@ -1,12 +1,13 @@
 {
 	"SellerDetails" : {
 		"Details":								"Seller details",
-		"AddItem":                     "Add item",
-		"ProductName":                 "Product name",
-		"Price":                       "Price",
-		"ImgUrl":                      "Image url",
-		"Submit":                     "Submit",
-		"Close":                      "Close",
+		"Add":               		 "Add item",
+		"ProductName":            "Product name",
+		"Price":                  "Price",
+		"ImagePath":                 "Image url",
+		"Submit":                 "Submit",
+		"Close":                  "Close",
+		"Back":										"Back",
 		"Messages" : {
 			"LoadFailed":           "Failed to load the list of products",
 			"SaveSucceeded":        "The product has been added successfully",
