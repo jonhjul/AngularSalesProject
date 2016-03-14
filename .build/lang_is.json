@@ -1,8 +1,22 @@
 {
+	"addItemModal": {
+		"addItem": "Add item",
+		"productName": "Product name",
+		"price": "Price",
+		"imgUrl": "Image url",
+		"submit": "Send",
+		"close": "Close"
+	},
+	"tabs": {
+		"sellerInfo": "Upplýsingar um seljenda",
+		"allProducts": "Allar vörur",
+		"topTen": "Top tíu"
+	},
 	"sellerdetails": {
 		"Title": "Seljendur",
 		"Name": "Nafn",
 		"Category": "Flokkur",
+		"Details": "Upplýsingar um seljanda",
 		"Messages": {
 			"LoadFailed": "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded": "Nýjum seljanda hefur verið bætt við",
@@ -13,6 +27,7 @@
 		"Title": "Seljendur",
 		"Name": "Nafn",
 		"Category": "Flokkur",
+		"Add": "Bæta við seljenda",
 		"Messages": {
 			"LoadFailed": "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded": "Nýjum seljanda hefur verið bætt við",
