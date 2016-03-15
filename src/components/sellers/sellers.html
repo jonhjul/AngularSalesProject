@@ -24,6 +24,15 @@
                 <ul class="nav navbar-nav navbar-right">
                   <button id="uprbtn" type="button" class="btn btn-default" ng-click="changeLang()" ng-controller="langController"><span translate="language"/></button>
                 </ul>
+
+                <ul class="nav navbar-nav col-md-2" style="padding: 10px 12px;">
+                  <div class="col-md-2"></div>
+                  <select  type="button" class="form-control" ng-model="sellerSort">
+                    <option value="" disabled="disabled" selected="selected">Order by</option>
+                    <option value="name" translate="Sellers.Name"></option>
+                    <option value="category" translate="Sellers.Category"></option>
+                  </select>
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -34,7 +43,7 @@
     <!-- Page Content -->
       <div class="container">
         <!-- Projects Row -->
-        <div ng-repeat="s in sellers track by $index" >
+        <div ng-repeat="s in sellers | orderBy: (sellerSort)" >
           <div class="row">
             <div class="col-md-6 portfolio-item">
               <a><img id="imgupr" class="img-rounded" ng-src="{{s.imagePath}}"/></a>
