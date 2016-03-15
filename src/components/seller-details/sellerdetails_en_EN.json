@@ -1,7 +1,7 @@
 {
 	"SellerDetails" : {
 		"Details":								"Seller details",
-		"Add":               		 "Add product",
+		"Add":               		 	"Add product",
 		"ProductName":            "Product name",
 		"Price":                  "Price",
 		"ImagePath":              "Image url",
@@ -11,7 +11,12 @@
 		"Messages" : {
 			"LoadFailed":           "Failed to load the list of products",
 			"SaveSucceeded":        "The product has been added successfully",
-			"SaveFailed":           "Unfortunately we could not add a new product"
+			"SaveFailed":           "Unfortunately we could not add a new product",
+			"EditSucceeded":        "The product has been edited successfully",
+			"EditFailed":           "Unfortunately we could not edit the product",
+			"InvalidAllInput":			"You must enter a product name and price to proceed!",
+			"InvalidNoName":				"You must input a product name!",
+			"InvalidPrice":					"You must input the products price!"
 		}
 	}
 }

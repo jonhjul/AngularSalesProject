@@ -1,0 +1,10 @@
+{
+	"productDlg" : {
+    "AddItem":                     "Add item",
+		"ProductName":                 "Product name",
+    "Price":                       "Price",
+    "ImgUrl":                      "Image url",
+    "Submit":                     "Submit",
+    "Close":                      "Close"
+	}
+}

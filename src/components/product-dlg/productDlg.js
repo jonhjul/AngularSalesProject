@@ -5,7 +5,7 @@ angular.module("project3App").factory("ProductDlg",
     return {
       open: function open(product) {
         var modalInstance = $uibModal.open({
-          templateUrl: "components/product/product-dlg.html",
+          templateUrl: "components/product-dlg/product-dlg.html",
           controller: "ProductDlgController", // validation logic
           resolve: {
             modalParam: function modalParam() {

@@ -28,15 +28,10 @@ angular.module("project3App", ["ngRoute", "pascalprecht.translate", "ui.bootstra
   });
 /*
 
-(10%) Add/edit individuals
-
-
-(10%) Add/edit product    3/4
-(5%) All tables sortable    1/2
-(5%) All input validated   some
+(5%) All input validated    some
 (5%) Translated             almost all
-(5%) Toastr feedback after add/edit
-(5%) Responsive layout  almost
+(5%) Toastr feedback after  add/edit
+(5%) Responsive layout      almost
 
 (20%) Unit tests for all code
 (10%) Coolness bonus

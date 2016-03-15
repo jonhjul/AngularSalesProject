@@ -5,13 +5,18 @@
 		"Category":									"Category",
 		"Add":											"Add seller",
 		"Edit":											"Edit seller",
-    "ImagePath":                   "Image url",
+    "ImagePath":                "Image url",
     "Submit":                   "Send",
     "Close":                    "Close",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of sellers",
 			"SaveSucceeded":         "The seller has been added successfully",
-			"SaveFailed":            "Unfortunately we could not add a new seller"
+			"SaveFailed":            "Unfortunately we could not add a new seller",
+			"EditSucceeded":         "The seller has been edited successfully",
+			"EditFailed":            "Unfortunately we could not edit the seller",
+			"InvalidAllInput":			"You must enter a seller name and category to proceed!",
+			"InvalidNoName":				"You must input a seller name!",
+			"InvalidPrice":					"You must input the seller category!"
 		}
 	}
 }

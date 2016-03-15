@@ -30,7 +30,7 @@ angular.module("project3App").controller("SellersController",
 
     $scope.gotoSellerDetails = function(seller) {
       for (var s in $scope.sellers) {
-        if ($scope.sellers[s] === seller) {
+        if ($scope.sellers[s].id === seller.id) {
           $location.path('sellerDetails/' + seller.id);
         }
       }

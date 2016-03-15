@@ -1,0 +1,10 @@
+{
+	"productDlg" : {
+    "AddItem":                     "Bæta við vöru",
+		"ProductName":                 "Nafn vöru",
+    "Price":                       "Verð",
+    "ImgUrl":                      "Vefslóð á mynd",
+    "Submit":                     "Senda",
+    "Close":                      "Loka"
+	}
+}

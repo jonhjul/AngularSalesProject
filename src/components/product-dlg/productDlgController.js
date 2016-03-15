@@ -1,16 +1,19 @@
 "use strict";
 
-angular.module("project3App").controller("SellerDlgController", ['$scope', 'AppResource', 'modalParam', 'toastr', '$translate',
-  function SellerDlgController($scope, AppResource, modalParam, toastr, $translate) {
+angular.module('project3App').controller('ProductDlgController', ['$scope',
+  '$uibModalInstance', 'AppResource', 'modalParam', '$routeParams', 'toastr', '$translate',
+  function ProductDlgController($scope, $uibModalInstance,
+    AppResource, modalParam, $routeParams, toastr, $translate) {
 
-    var editInfo = modalParam.seller;
+    var sellerId = parseInt($routeParams['sellerId']);
+    var editInfo = modalParam.product;
     if (editInfo !== undefined) {
-      console.log("Edit info");
-      console.log(editInfo);
-      $scope.newSeller = {
+      $scope.newProduct = {
         'id': editInfo.id,
         'name': editInfo.name,
-        'category': editInfo.category,
+        'price': editInfo.price,
+        'quantitySold': editInfo.quantitySold,
+        'quantityInStock': editInfo.quantityInStock,
         'imagePath': editInfo.imagePath
       };
     }
@@ -20,20 +23,22 @@ angular.module("project3App").controller("SellerDlgController", ['$scope', 'AppR
     };
 
     $scope.onOk = function onOK() {
-      if ($scope.newSeller) {
-        if ($scope.newSeller.name && $scope.newSeller.name.length && $scope.newSeller.name.length > 0) {
-          if ($scope.newSeller && $scope.newSeller.category && $scope.newSeller.category.length > 0) {
-            if ($scope.newSeller.id === undefined) {
-              AppResource.addSeller($scope.newSeller)
-                .success(function(seller) {
-                  $translate('Sellers.Messages.SaveSucceeded')
+      if ($scope.newProduct) {
+        if ($scope.newProduct.name && $scope.newProduct.name.length && $scope.newProduct.name.length > 0) {
+          if ($scope.newProduct && $scope.newProduct.price && $scope.newProduct.price > 0) {
+            if ($scope.newProduct.id === undefined) {
+              AppResource.addSellerProduct(sellerId, $scope.newProduct)
+                .success(function(product) {
+                  $scope.isLoading = false;
+                  $translate('SellerDetails.Messages.SaveSucceeded')
                     .then(function(translateVal) {
                       toastr.info(translateVal, {
                         allowHtml: true
                       });
                     });
                 }).error(function() {
-                  $translate('Sellers.Messages.SaveFailed')
+                  $scope.isLoading = false;
+                  $translate('SellerDetails.Messages.SaveFailed')
                     .then(function(translateVal) {
                       toastr.info(translateVal, {
                         allowHtml: true
@@ -41,16 +46,18 @@ angular.module("project3App").controller("SellerDlgController", ['$scope', 'AppR
                     });
                 });
             } else {
-              AppResource.updateSeller($scope.newSeller.id, $scope.newSeller)
-                .success(function(seller) {
-                  $translate('Sellers.Messages.EditSucceeded')
+              AppResource.updateProduct(sellerId, $scope.newProduct)
+                .success(function(product) {
+                  $scope.isLoading = false;
+                  $translate('SellerDetails.Messages.EditSucceeded')
                     .then(function(translateVal) {
                       toastr.info(translateVal, {
                         allowHtml: true
                       });
                     });
                 }).error(function() {
-                  $translate('Sellers.Messages.EditFailed')
+                  $scope.isLoading = false;
+                  $translate('SellerDetails.Messages.EditFailed')
                     .then(function(translateVal) {
                       toastr.info(translateVal, {
                         allowHtml: true
@@ -59,7 +66,7 @@ angular.module("project3App").controller("SellerDlgController", ['$scope', 'AppR
                 });
             }
           } else {
-            $translate('Sellers.Messages.InvalidPrice')
+            $translate('SellerDetails.Messages.InvalidPrice')
               .then(function(translateVal) {
                 toastr.info(translateVal, {
                   allowHtml: true
@@ -68,16 +75,17 @@ angular.module("project3App").controller("SellerDlgController", ['$scope', 'AppR
             return;
           }
         } else {
-          $translate('Sellers.Messages.InvalidNoName')
+          $translate('SellerDetails.Messages.InvalidNoName')
             .then(function(translateVal) {
               toastr.info(translateVal, {
                 allowHtml: true
               });
             });
           return;
+
         }
       } else {
-        $translate('Sellers.Messages.InvalidAllInput')
+        $translate('SellerDetails.Messages.InvalidAllInput')
           .then(function(translateVal) {
             toastr.info(translateVal, {
               allowHtml: true
@@ -85,7 +93,7 @@ angular.module("project3App").controller("SellerDlgController", ['$scope', 'AppR
           });
         return;
       }
-      $scope.$close($scope.seller);
+      $scope.$close($scope.newProduct);
     };
 
   }

@@ -7,12 +7,6 @@ angular.module('project3App')
       $scope.seller = {};
       $scope.editData = {};
 
-      $translate('sellerdetails.Details').then(function(translateVal) {
-        toastr.info(translateVal, {
-          allowHtml: true
-        });
-      });
-
       angular.element(document).ready(function() {
         $scope.refreshSellerProducts();
       });
@@ -53,12 +47,6 @@ angular.module('project3App')
       $scope.editProduct = function editProduct(product) {
         $scope.editData = ProductDlg.open(product);
         $scope.editData.result.then(function(updatedProduct) {
-          /* Mix því  refreshSellerProducts() virðist ekki duga*/
-/*          for (var i in $scope.products){
-            if($scope.products[i].id === updatedProduct.id){
-              $scope.products[i] = updatedProduct;
-            }
-          }*/
           $scope.refreshSellerProducts();
         });
       };

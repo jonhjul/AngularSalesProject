@@ -11,7 +11,10 @@
 		"Messages" : {
 			"LoadFailed":           "Ekki tókst að sækja lista yfir vörur",
 			"SaveSucceeded":        "Nýrri vöru hefur verið bætt við",
-			"SaveFailed":           "Því miður tókst ekki að bæta við nýrri vöru"
+			"SaveFailed":           "Því miður tókst ekki að bæta við nýrri vöru",
+			"InvalidAllInput":			"",
+			"InvalidNoName":				"",
+			"InvalidPrice":					""
 		}
 	}
 }
