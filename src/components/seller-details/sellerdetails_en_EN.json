@@ -1,10 +1,10 @@
 {
 	"SellerDetails" : {
 		"Details":								"Seller details",
-		"Add":               		 "Add item",
+		"Add":               		 "Add product",
 		"ProductName":            "Product name",
 		"Price":                  "Price",
-		"ImagePath":                 "Image url",
+		"ImagePath":              "Image url",
 		"Submit":                 "Submit",
 		"Close":                  "Close",
 		"Back":										"Back",

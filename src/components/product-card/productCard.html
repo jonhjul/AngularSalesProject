@@ -1,12 +1,11 @@
-
-<div class="col-md-3 productCard">
-  <img ng-src="{{product.imagePath}}"/>
-  <h4 >{{product.name}}</h4>
-  <p>{{product.price}}</p>
-  <a ng-click="editProduct(product)">Edit</a>
+<div ng-repeat="product in products | orderBy: (sortBy)" ng-style="{display:'inline-block',border:'none', width:100/widgets.length+'%'}">
+  <div class="col-md-3 productCard">
+    <img ng-src="{{product.imagePath}}"/>
+    <h4 >{{product.name}}</h4>
+    <p>{{product.price}}</p>
+    <a ng-click="editProduct(product)">Edit</a>
+  </div>
 </div>
-
-
-<!--
-<div flex product layout-margin layout-fill product="product"></div>
--->
+<div ng-if="products.length == 0">
+  <strong>No results found...</strong>
+</div>

@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module("project3App").factory("ProductDlg",
-  function ProductDlg($uibModal) {
+  function ProductDlg($rootScope, $uibModal) {
     return {
       open: function open(product) {
         var modalInstance = $uibModal.open({
           templateUrl: "components/product/product-dlg.html",
-          controller: "productController", // validation logic
+          controller: "ProductDlgController", // validation logic
           resolve: {
             modalParam: function modalParam() {
               return {
@@ -15,10 +15,10 @@ angular.module("project3App").factory("ProductDlg",
             }
           },
           return: {
-            product: product,
+            product: product
           }
         });
-
+        return modalInstance;
         //return modalInstance.result; // Promise object
       }
     };

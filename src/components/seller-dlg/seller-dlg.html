@@ -2,8 +2,8 @@
 
   <div class="modal-header">
     <button type="button" class="close" ng-click="onCancel()">&times;</button>
-    <h4 class="modal-title" translate="Sellers.Add" ng-show="seller == undefined "></h4>
-    <h4 class="modal-title" translate="Sellers.Edit" ng-hide="seller == undefined "></h4>
+    <h4 class="modal-title" translate="Sellers.Add" ng-show="newSeller == undefined "></h4>
+    <h4 class="modal-title" translate="Sellers.Edit" ng-hide="newSeller == undefined "></h4>
   </div>
 
   <div class="modal-body">
@@ -12,24 +12,26 @@
       <label for="name" translate="Sellers.Name" ></label>
       <input type="text" class="form-control" id="sellerName"
       placeholder="{{'Sellers.Name' | translate}}"
-            ng-model="seller.name"/>
+            ng-model="newSeller.name"/>
     </div>
     <div class="form-group">
       <label for="category" translate="Sellers.Category"></label>
       <input type="text" class="form-control" id="category"
       placeholder="{{'Sellers.Category' | translate}}"
-            ng-model="seller.category"/>
+            ng-model="newSeller.category"/>
     </div>
     <div class="form-group">
       <label for="imgUrl" translate="Sellers.ImagePath"></label>
       <input type="text" class="form-control" id="imgUrl"
       placeholder="{{'SellerDetails.ImagePath' | translate}}"
-            ng-model="seller.imagePath"/>
+            ng-model="newSeller.imagePath"/>
     </div>
-    <button ng-click="onOk()" class="btn btn-default">Submit</button>
+    <button ng-click="onOk()" class="btn btn-default"
+            translate="SellerDetails.Submit"></button>
 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-default" ng-click="onCancel()">Close</button>
+    <button type="button" class="btn btn-default" ng-click="onCancel()"
+          translate="SellerDetails.Close"></button>
   </div>
 </div>

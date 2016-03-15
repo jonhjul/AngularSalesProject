@@ -3,28 +3,35 @@
 angular.module("project3App").controller("SellerDlgController",['$scope', 'AppResource','modalParam',
   function SellerDlgController($scope, AppResource, modalParam) {
 
-    $scope.seller = modalParam.seller;
+    var editInfo = modalParam.seller;
+    if (editInfo !== undefined) {
+      console.log("Edit info");
+      console.log(editInfo);
+      $scope.newSeller = {
+        'id': editInfo.id,
+        'name': editInfo.name,
+        'category': editInfo.category,
+        'imagePath': editInfo.img
+      };
+    }
+
 
     $scope.onOk = function onOK() {
-      if ($scope.seller.name.length === 0) {
+      if ($scope.newSeller.name.length === 0) {
         // Vantar toster
         return;
       }
-      if ($scope.seller.category.length === 0) {
+      if ($scope.newSeller.category.length === 0) {
         return;
       }
-      console.log($scope.seller);
-      if($scope.seller && $scope.seller.id === undefined){
-
-        AppResource.addSeller($scope.seller).success(function(seller) {
+      if($scope.newSeller && $scope.newSeller.id === undefined){
+        AppResource.addSeller($scope.newSeller).success(function(seller) {
           console.log("Add seller succsess");
-          console.log(seller);
         });
       }
       else{
-        AppResource.updateSeller($scope.seller.id, $scope.seller).success(function(seller) {
+        AppResource.updateSeller($scope.newSeller.id, $scope.newSeller).success(function(seller) {
           console.log("Update seller succsess");
-          console.log(seller);
         });
       }
       $scope.$close($scope.seller);

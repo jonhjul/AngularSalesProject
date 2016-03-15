@@ -48,13 +48,9 @@
   <script type="text/ng-template" id="two.tpl.html">
     <div id="viewTwo">
 
-      <div ng-repeat="product in products | orderBy: (sortBy)"
-          ng-style="{display:'inline-block',border:'none', width:100/widgets.length+'%'}">
+
         <product-card ></product-card>
-      </div>
-      <div ng-if="products.length == 0">
-        <strong>No results found...</strong>
-      </div>
+    
 
     </div>
   </script>
@@ -73,3 +69,14 @@
     </div>
   </script>
 </div>
+
+
+<!--
+<div ng-repeat="product in products | orderBy: (sortBy)"
+    ng-style="{display:'inline-block',border:'none', width:100/widgets.length+'%'}">
+  <product-card ></product-card>
+</div>
+<div ng-if="products.length == 0">
+  <strong>No results found...</strong>
+</div>
+-->

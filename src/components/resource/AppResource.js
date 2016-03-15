@@ -173,10 +173,45 @@ function AppResource() {
 			}
 
 			return mockHttpPromise(success, product);
-		}
+		},
 
 		// TODO: the updateProduct() function is left as an exercise to
 		// the reader...
+		updateProduct: function(id, product) {
+			var current = null;
+			console.log(product);
+			if (mockResource.successUpdateSellerProduct) {
+				current = _.find(mockProducts, function(o){ return (o.id === id) && (o.product.id === product.id);});
+				if (current !== null) {
+					console.log(current);
+					current.product = {
+						"id":	current.product.id,
+						"name": product.name,
+						"price": product.price,
+						"quantitySold": product.quantitySold,
+						"quantityInStock": product.quantityInStock,
+						"imagePath": product.imagePath
+					};
+				}
+
+			}
+			return mockHttpPromise(mockResource.successUpdateSellerProduct, current);
+		}
+
+		/*
+		id: sellerid,
+		product: {
+			id: id,
+			name: productName,
+			price: price,
+			quantitySold: quantitySold,
+			quantityInStock: quantityInStock,
+			imagePath: path
+		}
+		*/
+
+
+
 	};
 
 	return mockResource;

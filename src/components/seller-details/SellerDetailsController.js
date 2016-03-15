@@ -1,107 +1,99 @@
 "use strict";
 
 angular.module('project3App')
-  .controller('SellerDetailsController', ['$scope', 'AppResource','$routeParams', '$uibModal', '$location', 'toastr', '$translate','ProductDlg',
-  function($scope, AppResource, $routeParams, $uibModal, $location, toastr, $translate, ProductDlg) {
-    $scope.modalInstance = {};
-    $scope.seller = {};
+  .controller('SellerDetailsController', ['$scope', 'AppResource', '$routeParams', '$uibModal', '$location', 'toastr', '$translate', 'ProductDlg',
+    function($scope, AppResource, $routeParams, $uibModal, $location, toastr, $translate, ProductDlg) {
+      $scope.modalInstance = {};
+      $scope.seller = {};
+      $scope.editData = {};
 
-    $translate('sellerdetails.Details').then(function (translateVal) {
-      toastr.info(translateVal, {
+      $translate('sellerdetails.Details').then(function(translateVal) {
+        toastr.info(translateVal, {
           allowHtml: true
         });
-    });
+      });
 
-    $scope.sortBy = 'price';
-    $scope.selectItems = [
-      {"name":"Name","value":"name"},
-      {"name":"Price","value":"price"},
-      {"name":"Quantity Sold","value":"quantitySold"},
-      {"name":"Quantity In Stock","value":"quantityInStock"}
-    ];
+      angular.element(document).ready(function() {
+        $scope.refreshSellerProducts();
+      });
 
-    $scope.update = function update() {
-        $scope.products = $scope.products.sort();
-    };
+      $scope.refreshSellerProducts = function refreshSellerProducts() {
+        AppResource.getSellerProducts(parseInt($routeParams['sellerId'])).success(function(products) {
+          $scope.products = products;
+          $scope.isLoading = false;
+        }).error(function() {
+          console.log("Get seller fail");
+          $scope.isLoading = false;
+        });
+      };
 
-    $scope.orderParam = function (){
-      console.log('ran');
-        return $scope.sortBy;
-    };
+      $scope.sortBy = 'price';
+      $scope.selectItems = [{
+        "name": "Name",
+        "value": "name"
+      }, {
+        "name": "Price",
+        "value": "price"
+      }, {
+        "name": "Quantity Sold",
+        "value": "quantitySold"
+      }, {
+        "name": "Quantity In Stock",
+        "value": "quantityInStock"
+      }];
 
-    $scope.tabs = [{
-      title: 'Tabs.SellerInfo',
-      url: 'one.tpl.html'
-    },{
-      title: 'Tabs.AllProducts',
-      url: 'two.tpl.html'
-    },{
-      title: 'Tabs.TopTen',
-      url: 'three.tpl.html'
-    }];
+      $scope.goBack = function goBack() {
+        $location.path('/');
+      };
 
-    $scope.currentTab = 'one.tpl.html';
-
-    $scope.onClickTab = function(tab) {
-      $scope.currentTab = tab.url;
-    };
-
-    $scope.isActiveTab = function(tabUrl) {
-      return tabUrl === $scope.currentTab;
-    };
-
-    $scope.goBack = function goBack(){
-      $location.path('/');
-    };
-
-    AppResource.getSellerDetails(parseInt($routeParams['sellerId'])).success(function(seller){
+      AppResource.getSellerDetails(parseInt($routeParams['sellerId'])).success(function(seller) {
         $scope.seller = seller;
-    }).error(function(){
+      }).error(function() {});
 
-    });
+      $scope.editProduct = function editProduct(product) {
+        $scope.editData = ProductDlg.open(product);
+        $scope.editData.result.then(function(updatedProduct) {
+          /* Mix því  refreshSellerProducts() virðist ekki duga*/
+/*          for (var i in $scope.products){
+            if($scope.products[i].id === updatedProduct.id){
+              $scope.products[i] = updatedProduct;
+            }
+          }*/
+          $scope.refreshSellerProducts();
+        });
+      };
 
+      $scope.onAddItem = function onAddItem() {
+        $scope.obj = ProductDlg.open();
+        $scope.obj.result.then(function(updatedProduct) {
+          $scope.refreshSellerProducts();
+        });
+      };
 
-    $scope.editProduct = function editProduct(product) {
-      console.log(product);
-      ProductDlg.open(product);
-    };
+      $scope.orderParam = function() {
+        return $scope.sortBy;
+      };
 
-    $scope.onAddItem = function onAddItem() {
-        ProductDlg.open();
-    };
+      $scope.tabs = [{
+        title: 'Tabs.SellerInfo',
+        url: 'one.tpl.html'
+      }, {
+        title: 'Tabs.AllProducts',
+        url: 'two.tpl.html'
+      }, {
+        title: 'Tabs.TopTen',
+        url: 'three.tpl.html'
+      }];
 
-/*
-    $scope.onAddItem = function onAddItem() {
-      $scope.modalInstance = $uibModal.open({
-        animation: false,
-        templateUrl: 'components/product/addItemModal.html',
-        controller: 'productController',
-        resolve: {
-          items: function() {
-            return $scope.items;
-          }
-        }
-      });
+      $scope.currentTab = 'one.tpl.html';
 
-      $scope.modalInstance.result.then(function(selectedItem) {
-        $scope.selected = selectedItem;
-        $scope.refreshSellerProducts();
-      }, function() {
-        //$log.info('Modal dismissed at: ' + new Date());
-      });
-    };
-*/
-    angular.element(document).ready(function() {
-        $scope.refreshSellerProducts();
-    });
+      $scope.onClickTab = function(tab) {
+        $scope.currentTab = tab.url;
+      };
 
-    $scope.refreshSellerProducts = function refreshSellerProducts(){
-      AppResource.getSellerProducts(parseInt($routeParams['sellerId'])).success(function(products) {
-        $scope.products = products;
-        $scope.isLoading = false;
-      }).error(function() {
-        $scope.isLoading = false;
-      });
-    };
+      $scope.isActiveTab = function(tabUrl) {
+        return tabUrl === $scope.currentTab;
+      };
 
-  }]);
+    }
+  ]);
