@@ -22,25 +22,6 @@ angular.module('project3App')
         });
       };
 
-      $scope.sortBy = 'sel';
-      $scope.selectItems = [{
-        "name": "Name",
-        "value": "name"
-      }, {
-        "name": "Price",
-        "value": "price"
-      }, {
-        "name": "Quantity Sold",
-        "value": "quantitySold"
-      }, {
-        "name": "Quantity In Stock",
-        "value": "quantityInStock"
-      }];
-
-      $scope.goBack = function goBack() {
-        $location.path('/');
-      };
-
 
       AppResource.getSellerDetails(parseInt($routeParams['sellerId'])).success(function(seller) {
         $scope.seller = seller;
@@ -59,7 +40,7 @@ angular.module('project3App')
           $scope.refreshSellerProducts();
         });
       };
-
+      $scope.sortBy = 'sel';
       $scope.orderParam = function() {
         return $scope.sortBy;
       };
