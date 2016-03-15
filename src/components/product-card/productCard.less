@@ -1,60 +1,76 @@
 
+.productCard{
+  @media only screen and (min-width : 700px) {
+    width: 250px;
+    .productStyle{
+    //    border: 1px solid #000;
+    //    border-bottom: 1px solid black;
 
-@media only screen and (min-width : 992px) {
-  h4{
-		text-align: center;
-  }
-  img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  p{
-    text-align: center;
-  }
-  .productCard{
-      border: 1px solid #000;
-      border-bottom: 1px solid black;
-  }
+        h4{
+      		text-align: center;
+        }
+        img{
+          //height: 250px;
+          width: 250px;
+      //    display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        p{
+          padding: -10px;
+          text-align: center;
+          .editProd{
 
-}
+          }
+        }
 
-@media only screen and (min-width : 768px) {
-  h4{
-    text-align: center;
-  }
-  img{
-    margin-left: auto;
-    margin-right: auto;
-  }
-  p{
-    text-align: center;
-  }
-  .productCard{
-			width: 250px;
-			height: 250px;
-      border: 1px solid #000;
-  }
+    }
 
-}
+  }
+  @media only screen and (min-width : 320px) {
+    width: 250px;
+    .productStyle{
+    //    border: 1px solid #000;
+    //    border-bottom: 1px solid black;
 
-@media only screen and (min-width : 0px) and (max-width: 768px) {
-  h4{
-    text-align: center;
-  }
-  img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  p{
-    text-align: center;
-  }
-  .productCard{
-		width: 250px;
-		height: 250px;
-      border: 1px solid #000;
-      border-bottom: 1px solid black;
+        h4{
+      		text-align: center;;
+        }
+        img{
+          height: 150px;
+      //    display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        p{
+          padding: -10px;
+          text-align: center;
+
+        }
+    }
+
   }
 
+/*
+  @media only screen and (min-width : 0px) and (max-width: 768px) {
+    h4{
+      text-align: center;
+    }
+    img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    p{
+      text-align: center;
+    }
+    .productStyle{
+  		width: 250px;
+  		height: 250px;
+        border: 1px solid #000;
+        border-bottom: 1px solid black;
+    }
+
+  }
+*/
 }

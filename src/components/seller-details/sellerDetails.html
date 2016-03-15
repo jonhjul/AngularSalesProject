@@ -1,37 +1,54 @@
-<div>
+<div class="sellerDetails">
 
-  <div class="col-md-12" ng-hide="isLoading">
-    <div class="col-md-1">
-      <button class="btn btn-primary" ng-click="onAddItem()">
-        <span translate="SellerDetails.Add"/>
-      </button>
-    </div>
-    <div class="col-md-2">
-      <button class="btn btn-warning" ng-click="changeLang()" ng-controller="langController">
-        <span translate="Sellers.Language"/>
-      </button>
-    </div>
-    <div class="col-md-1">
-      <button class="btn btn-warning" ng-click="goBack()">
-        <span translate="SellerDetails.Back"/>
-      </button>
-    </div>
-    <div class="col-md-2">
-      <select class="form-control" ng-model="sortBy" ng-show="sortAvailabl">
-          <option value="name" translate="Sellers.Name"></option>
-          <option value="price" translate="Sellers.Price"></option>
-          <option value="quantitySold" translate="Sellers.Name"></option>
-          <option value="quantityInStock" translate="Sellers.Name"></option>
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse"
+                      data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#/">Home</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <button type="button" class="uprbtn btn btn-default"
+                        ng-click="onAddItem()" translate="Sellers.Add"/></button>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <button type="button" class="uprbtn btn btn-default"
+                        ng-click="changeLang()" ng-controller="langController"
+                        translate="Sellers.Language"></button>
+              </ul>
 
-    </select>
-    </div>
-  </div>
+              <ul class="nav navbar-nav col-md-2" style="padding: 10px 12px;">
+                <div class="col-md-2"></div>
+                <select class="form-control" ng-model="sortBy" ng-show="sortAvailabl">
+                  <option value="sel" disabled="disabled" selected="selected"
+                          translate="Sellers.OrderBy"></option>
+                    <option value="name" translate="Sellers.Name"></option>
+                    <option value="price" translate="SellerDetails.Price"></option>
+                    <option value="quantitySold" translate="Sellers.QuantitySold"></option>
+                    <option value="quantityInStock" translate="Sellers.QuantityInStock"></option>
+
+              </select>
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+  </nav>
+
 
   <!-- Modal -->
-
-  <div id="tabs">
-    <ul>
-      <li ng-repeat="tab in tabs" ng-class="{active:isActiveTab(tab.url)}" class="tableCrusor" ng-click="onClickTab(tab)">{{ tab.title | translate}}</li>
+<div class="container">
+  <div id="tabs" >
+    <ul class="nav nav-tabs" role="tablist">
+      <li ng-repeat="tab in tabs" ng-class="{active:isActiveTab(tab.url)}"
+          class="tableCrusor" ng-click="onClickTab(tab)"><a>{{ tab.title | translate}}</a></li>
     </ul>
     <div id="mainView">
       <div ng-include="currentTab"></div>
@@ -39,13 +56,13 @@
   </div>
 
   <script type="text/ng-template" id="one.tpl.html">
-    <div id="viewOne" class="col-md-12">
+    <div id="viewOne" class="sellerDetails col-md-12">
       <h2 translate="SellerDetails.Details"></h2>
       <img ng-src="{{seller.imagePath}}"/>
-      <div class="col-md-9">
+      <div>
         <span>{{seller.name}}</span>
       </div>
-      <div class="col-md-3">
+      <div>
         <span>{{seller.category}}</span>
       </div>
     </div>
@@ -75,14 +92,4 @@
     </div>
   </script>
 </div>
-
-
-<!--
-<div ng-repeat="product in products | orderBy: (sortBy)"
-    ng-style="{display:'inline-block',border:'none', width:100/widgets.length+'%'}">
-  <product-card ></product-card>
 </div>
-<div ng-if="products.length == 0">
-  <strong>No results found...</strong>
-</div>
--->

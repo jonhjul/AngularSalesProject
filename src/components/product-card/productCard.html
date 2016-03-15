@@ -1,11 +1,11 @@
-<div  ng-style="{display:'inline-block',border:'none', width:100/widgets.length+'%'}">
-  <div class="col-md-3 productCard">
+<div  class="productCard" ng-style="{display:'inline-block',border:'none', width:100/widgets.length+'%'}">
+  <div class="productStyle">
     <img ng-src="{{product.imagePath}}"/>
-    <h4 >{{product.name}}</h4>
+    <a class="editProd pull-right" ng-click="editProduct(product)">Edit</a>
+    <h4>{{product.name}}</h4>
     <p>{{product.price}}</p>
-    <a ng-click="editProduct(product)">Edit</a>
   </div>
 </div>
 <div ng-if="products.length == 0">
-  <strong>No results found...</strong>
+  <p>No results found...</p>
 </div>

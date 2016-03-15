@@ -22,7 +22,7 @@ angular.module('project3App')
         });
       };
 
-      $scope.sortBy = 'price';
+      $scope.sortBy = 'sel';
       $scope.selectItems = [{
         "name": "Name",
         "value": "name"

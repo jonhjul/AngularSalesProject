@@ -5,6 +5,8 @@
 		"Name":                     "Name",
 		"Category":									"Category",
 		"OrderBy":									"Order by",
+		"QuantitySold":							"Quantity Sold",
+		"QuantityInStock":					"QuantityInStock",
 		"Add":											"Add seller",
 		"Edit":											"Edit",
 		"EditSeller":								"Edit seller",

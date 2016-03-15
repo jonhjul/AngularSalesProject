@@ -5,6 +5,8 @@
 		"Name":                     "Nafn",
 		"Category":									"Flokkur",
 		"OrderBy":									"Raða eftir",
+		"QuantitySold":							"Seldar vörur",
+		"QuantityInStock":					"Vörur á lagar",
 		"Add":											"Bæta við seljenda",
 		"Edit":											"Breyta",
 		"EditSeller":								"Breyta seljenda",
