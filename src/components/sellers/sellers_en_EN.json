@@ -1,10 +1,13 @@
 {
 	"Sellers" : {
+		"Language":									"Language (en/is)",
 		"Title":                    "Sellers List",
 		"Name":                     "Name",
 		"Category":									"Category",
+		"OrderBy":									"Order by",
 		"Add":											"Add seller",
-		"Edit":											"Edit seller",
+		"Edit":											"Edit",
+		"EditSeller":								"Edit seller",
     "ImagePath":                "Image url",
     "Submit":                   "Send",
     "Close":                    "Close",

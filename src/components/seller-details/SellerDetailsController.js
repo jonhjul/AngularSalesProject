@@ -6,6 +6,7 @@ angular.module('project3App')
       $scope.modalInstance = {};
       $scope.seller = {};
       $scope.editData = {};
+      $scope.sortAvailable = false;
 
       angular.element(document).ready(function() {
         $scope.refreshSellerProducts();
@@ -39,6 +40,7 @@ angular.module('project3App')
       $scope.goBack = function goBack() {
         $location.path('/');
       };
+
 
       AppResource.getSellerDetails(parseInt($routeParams['sellerId'])).success(function(seller) {
         $scope.seller = seller;
@@ -76,6 +78,12 @@ angular.module('project3App')
       $scope.currentTab = 'one.tpl.html';
 
       $scope.onClickTab = function(tab) {
+        if(tab.title === 'Tabs.AllProducts'){
+            $scope.sortAvailabl = true;
+        }else{
+          $scope.sortAvailabl = false;
+        }
+
         $scope.currentTab = tab.url;
       };
 

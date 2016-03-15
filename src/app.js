@@ -28,9 +28,7 @@ angular.module("project3App", ["ngRoute", "pascalprecht.translate", "ui.bootstra
   });
 /*
 
-(5%) All input validated    some
 (5%) Translated             almost all
-(5%) Toastr feedback after  add/edit
 (5%) Responsive layout      almost
 
 (20%) Unit tests for all code

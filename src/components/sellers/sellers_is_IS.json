@@ -1,10 +1,13 @@
 {
 	"Sellers" : {
+		"Language":									"Tungumál (en/is)",
 		"Title":                    "Seljendur",
 		"Name":                     "Nafn",
 		"Category":									"Flokkur",
+		"OrderBy":									"Raða eftir",
 		"Add":											"Bæta við seljenda",
-		"Edit":											"Edit seller",
+		"Edit":											"Breyta",
+		"EditSeller":								"Breyta seljenda",
     "ImagePath":                "Slóð á mynd",
     "Submit":                   "Senda",
     "Close":                    "Loka",

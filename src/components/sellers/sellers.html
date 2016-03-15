@@ -22,13 +22,13 @@
                   <button id="uprbtn" type="button" class="btn btn-default" ng-click="onAddSeller()"><span translate="Sellers.Add"/></button>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <button id="uprbtn" type="button" class="btn btn-default" ng-click="changeLang()" ng-controller="langController"><span translate="language"/></button>
+                  <button id="uprbtn" type="button" class="btn btn-default" ng-click="changeLang()" ng-controller="langController"><span translate="Sellers.Language"/></button>
                 </ul>
 
                 <ul class="nav navbar-nav col-md-2" style="padding: 10px 12px;">
                   <div class="col-md-2"></div>
                   <select  type="button" class="form-control" ng-model="sellerSort">
-                    <option value="" disabled="disabled" selected="selected">Order by</option>
+                    <option value="" disabled="disabled" selected="selected" translate="Sellers.OrderBy"></option>
                     <option value="name" translate="Sellers.Name"></option>
                     <option value="category" translate="Sellers.Category"></option>
                   </select>
@@ -49,7 +49,8 @@
               <a><img id="imgupr" class="img-rounded" ng-src="{{s.imagePath}}"/></a>
             </div>
               <div class="col-md-6 portfolio-item">
-                <button id="imgbtn" type="button" class="btn btn-link" ng-click="gotoSellerDetails(s)"><h2>{{s.name}}</h2></button><a style="cursor:pointer" ng-click="editSeller(s)">Edit</a>
+                <button id="imgbtn" type="button" class="btn btn-link" ng-click="gotoSellerDetails(s)">
+                  <h2>{{s.name}}</h2></button><a style="cursor:pointer" ng-click="editSeller(s)" translate="Sellers.Edit"></a>
               </div>
               <div class="col-md-1">
                 <h4 id="h4sellers">{{s.category}}</h4>

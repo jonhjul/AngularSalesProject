@@ -6,9 +6,9 @@
         <span translate="SellerDetails.Add"/>
       </button>
     </div>
-    <div class="col-md-1">
+    <div class="col-md-2">
       <button class="btn btn-warning" ng-click="changeLang()" ng-controller="langController">
-        <span translate="language"/>
+        <span translate="Sellers.Language"/>
       </button>
     </div>
     <div class="col-md-1">
@@ -17,7 +17,13 @@
       </button>
     </div>
     <div class="col-md-2">
-      <select class="form-control" ng-model="sortBy" ng-change="update()" ng-options="item.value as item.name for item in selectItems"></select>
+      <select class="form-control" ng-model="sortBy" ng-show="sortAvailabl">
+          <option value="name" translate="Sellers.Name"></option>
+          <option value="price" translate="Sellers.Price"></option>
+          <option value="quantitySold" translate="Sellers.Name"></option>
+          <option value="quantityInStock" translate="Sellers.Name"></option>
+
+    </select>
     </div>
   </div>
 
