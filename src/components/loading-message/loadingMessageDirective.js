@@ -7,3 +7,4 @@ function loadginMessage(){
       templateUrl: "src/components/loading-message/loading.html"
     };
 });
+/* */
